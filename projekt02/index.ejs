@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>projekt02</title>
+  </head>
+  <body>
+    <h1>Strona główna</h1>
+
+    <p><b><%= msg || "brak" %></b></p>
+
+    <form method="POST" action="/send">
+      <input type="text" name="txt" placeholder="napisz coś" />
+      <button type="submit">Wyślij</button>
+    </form>
+
+    <p><a href="/a">/a</a></p>
+  </body>
+</html>
