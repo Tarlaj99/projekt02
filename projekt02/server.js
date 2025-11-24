@@ -1,7 +1,7 @@
 const express = require("express");
 
 express.set("view engine", "ejs");
-app.use(express.urlencoded({ extended: false }));
+express.use(express.urlencoded({ extended: false }));
 
 let msg = "";
 
