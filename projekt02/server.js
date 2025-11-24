@@ -1,24 +1,21 @@
-const ex = require("express");
-const app = ex();
+const express = require("express");
 
-app.set("view engine", "ejs");
-app.use(ex.urlencoded({ extended: false }));
+express.set("view engine", "ejs");
+app.use(express.urlencoded({ extended: false }));
 
 let msg = "";
 
-app.get("/", (req, res) => {
+express.get("/", (req, res) => {
   res.render("index", { msg });
 });
 
-app.get("/a", (req, res) => {
-  res.send("GET /a");
+express.get("/a", (req, res) => {
+  res.render("page", { text: "GET /a" });
 });
 
-app.post("/send", (req, res) => {
+express.post("/send", (req, res) => {
   msg = req.body.txt || "";
   res.redirect("/");
 });
 
-app.listen(3000, () => {
-  console.log("http://localhost:3000");
-});
+express.listen(3000);
